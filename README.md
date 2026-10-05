@@ -6,6 +6,12 @@ Fraud AI provides an analyst login, transaction dashboard, explainable risk scor
 
 > **Note:** The risk score uses an explainable **weighted rules engine**, not a trained machine-learning model. All sample transaction data is fictional.
 
+# Screenshots
+ <img src="Screenshot 2026-10-05 011402.png">
+ <img src="Screenshot 2026-10-05 011253.png">
+<img src="Screenshot 2026-10-05 011305.png">
+<img src="Screenshot 2026-10-05 011105.png">
+
 ## 🚀 Features
 
 * 🔐 Analyst authentication
@@ -267,7 +273,3 @@ The project is intended for experimentation with:
 Fraud AI is an educational and experimental project.
 
 All transaction records and user information included in the application are fictional. Do not connect this prototype to real financial accounts, payment systems, or sensitive customer data without implementing appropriate security, privacy, compliance, and operational controls.
-
-## 📜 License
-
-This project is intended for educational and development purposes.
