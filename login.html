@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102945">
+  <title>Sign in | Fraud AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-story" aria-label="Fraud AI">
+      <a class="brand brand-light" href="/" aria-label="Fraud AI home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Fraud<span class="brand-lightweight"> AI</span></span>
+      </a>
+      <div class="story-content">
+        <p class="eyebrow eyebrow-light"><span class="live-dot"></span> FRAUD INTELLIGENCE / 01</p>
+        <h1>Trust the signal.<br><span>Catch the outlier.</span></h1>
+        <p class="story-copy">A clearer view of suspicious activity, built for the people who keep money moving.</p>
+      </div>
+      <div class="story-graphic" aria-hidden="true">
+        <div class="signal-axis"><span>RISK SIGNAL</span><span>24H</span></div>
+        <div class="signal-plot">
+          <div class="plot-grid"></div>
+          <svg viewBox="0 0 520 170" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="signalFill" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#b7f36c" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#b7f36c" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="signal-area" d="M0 132 C28 128 36 104 65 112 S105 132 128 104 S155 106 178 98 S214 119 235 88 S270 94 292 83 S320 84 344 62 S375 77 397 57 S425 83 450 42 S488 56 520 14 L520 170 L0 170 Z"/>
+            <path class="signal-line" d="M0 132 C28 128 36 104 65 112 S105 132 128 104 S155 106 178 98 S214 119 235 88 S270 94 292 83 S320 84 344 62 S375 77 397 57 S425 83 450 42 S488 56 520 14"/>
+            <circle cx="450" cy="42" r="5" class="signal-point"/>
+          </svg>
+          <span class="plot-callout"><i></i> anomalous activity</span>
+        </div>
+        <div class="plot-labels"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>NOW</span></div>
+      </div>
+      <div class="story-footer"><span>PROTECTING EVERY TRANSACTION</span><span>FINANCIAL CRIME / 2026</span></div>
+    </section>
+
+    <section class="login-panel">
+      <div class="mobile-brand brand">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Fraud<span class="brand-lightweight"> AI</span></span>
+      </div>
+      <div class="login-card">
+        <p class="eyebrow">ANALYST ACCESS</p>
+        <h2>Welcome back.</h2>
+        <p class="form-intro">Sign in to your risk workspace.</p>
+        {% if error %}<div class="form-error" role="alert">{{ error }}</div>{% endif %}
+        <form action="{{ url_for('login') }}" method="post" class="login-form">
+          <label for="username">Work email</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <input id="username" name="username" type="email" value="{{ username }}" autocomplete="username" required>
+          </div>
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>
+            <input id="password" name="password" type="password" value="{{ password }}" autocomplete="current-password" required>
+            <button class="password-toggle" type="button" aria-label="Show password" title="Show password">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </button>
+          </div>
+          <button class="sign-in-button" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="demo-access">
+          <div class="demo-heading"><span>DEMO ACCESS</span><span class="demo-status">READY</span></div>
+          <div class="demo-row"><span>Email</span><code>{{ username }}</code></div>
+          <div class="demo-row"><span>Password</span><code>{{ password }}</code></div>
+        </div>
+        <p class="login-footnote"><span class="secure-icon">✓</span> Secure analyst session <span class="footnote-divider"></span> Fraud AI</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelector('.password-toggle').addEventListener('click', function () {
+      const field = document.querySelector('#password');
+      const visible = field.type === 'password';
+      field.type = visible ? 'text' : 'password';
+      this.setAttribute('aria-label', visible ? 'Hide password' : 'Show password');
+      this.title = visible ? 'Hide password' : 'Show password';
+    });
+  </script>
+</body>
+</html>
