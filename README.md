@@ -1,6 +1,6 @@
 # Fraud AI
 
-A **local fraud-review and transaction-risk analysis prototype** built for security and fintech experimentation.
+A **Fraud-Review and Transaction-Risk Analysis Prototype** built for security and fintech experimentation.
 
 Fraud AI provides an analyst login, transaction dashboard, explainable risk scoring, review actions, JSON API endpoints, and SQLite persistence — all running locally from a single Python application.
 
@@ -237,23 +237,6 @@ It does **not** connect to:
 * Real customer financial accounts
 * External AI services
 * Production financial systems
-
-### Before Production Deployment
-
-A production implementation would require additional security controls, including:
-
-* Replace demo authentication with a proper identity provider
-* Use a strong randomly generated `FLASK_SECRET_KEY`
-* Implement CSRF protection
-* Add authentication rate limiting
-* Secure session configuration
-* Add proper authorization and role management
-* Validate and sanitize API input
-* Implement audit logging
-* Encrypt sensitive data where appropriate
-* Secure database credentials and configuration
-* Add monitoring and alerting
-* Review applicable financial-data and privacy requirements
 
 ## 🧪 Project Status
 
